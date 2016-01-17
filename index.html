@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="iissApp" ng-controller="RestaurantesApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Simple Map">
+    <meta name="author" content="">
+    <meta name="keywords" content="ng-map,AngularJS,center">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <title>LowCostFood</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/Chart.js"></script>
+	<script src="assets/js/modernizr.custom.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.3.15/angular.js"></script>
+	<script src="https://maps.google.com/maps/api/js?libraries=placeses,visualization,drawing,geometry,places"></script>
+	<script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"></script>
+	
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+		
+	<!-- Menu -->
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a href="index.html#home">LowCostFood</a></h1>
+			<i class="icon-remove menu-close"></i>
+			<a href="#home" class="smoothScroll">Inicio</a>
+			<a href="#services" class="smoothScroll">Noticias</a>
+			<a href="#portfolio" class="smoothScroll">Filtro</a>
+			<a href="#about" class="smoothScroll">Realizadores</a>
+			<a href="#contact" class="smoothScroll">Contacto</a>
+			<a href="#"><i class="icon-facebook"></i></a>
+			<a href="#"><i class="icon-twitter"></i></a>
+			<a href="#"><i class="icon-dribbble"></i></a>
+			<a href="#"><i class="icon-envelope"></i></a>
+		</div>
+		
+		<!-- Menu button -->
+		<div id="menuToggle"><i class="icon-reorder"></i></div>
+	</nav>
+
+	<!-- ========== HEADER SECTION ========== -->
+	<section id="home" name="home"></section>
+	<div id="headerwrap">
+		<div class="container">
+			<br>
+			<h1>Low Cost Food</h1>
+			<h2>Tu comida al mejor precio</h2>
+			<div class="row">
+				<br>
+				<br>
+				<br>
+				<div class="col-lg-6 col-lg-offset-3">
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /headerwrap -->
+	
+	<!-- ========== NOTICIAS ========== -->
+	<section id="services" name="services"></section>
+	<div id="dg">
+		<div class="container">
+				<h1>NOTICIAS</h1>
+				<br>
+				<br>
+				<!--Hemos usado un lector RSS gratuito "http://feed.mikle.com/", el cual, insertando el códgio RSS feed que nos proporciona
+				la página http://gastronomiaycia.com/tag/comida-rapida/feed/ nos proporciona un script para que podamos agregarlo a nuestro HTML-->
+				<script type="text/javascript">document.write('\x3Cscript type="text/javascript" src="' + ('https:' == document.location.protocol ? 'https://' : 'http://') + 'feed.mikle.com/js/rssmikle.js">\x3C/script>');</script>
+				<script type="text/javascript">
+				
+				(function() {
+					var params = {
+						rssmikle_url: "http://gastronomiaycia.com/tag/comida-rapida/feed/",
+						rssmikle_frame_width: "100%",
+						rssmikle_frame_height: "400",
+						frame_height_by_article: "0",
+						rssmikle_target: "_top",
+						rssmikle_font: "Lato, Verdana, Arial, sans-serif", 
+						rssmikle_font_size: "16",
+						rssmikle_border: "on",
+						responsive: "off",
+						rssmikle_css_url: "",
+						text_align: "left",
+						text_align2: "left",
+						corner: "off",
+						scrollbar: "on",
+						autoscroll: "on_mc",
+						scrolldirection: "up",
+						scrollstep: "3",
+						mcspeed: "30",
+						sort: "New",
+						rssmikle_title: "off",
+						rssmikle_title_sentence: "",
+						rssmikle_title_link: "",
+						rssmikle_title_bgcolor: "#0066FF",
+						rssmikle_title_color: "#FFFFFF",
+						rssmikle_title_bgimage: "",
+						rssmikle_item_bgcolor: "#00FF",
+						rssmikle_item_bgimage: "",
+						rssmikle_item_title_length: "200",
+						rssmikle_item_title_color: "#000000",
+						rssmikle_item_border_bottom: "off",
+						rssmikle_item_description: "on",
+						item_link: "off",
+						rssmikle_item_description_length: "600",
+						rssmikle_item_description_color: "#555",
+						rssmikle_item_date: "gl1",
+						rssmikle_timezone: "Etc/GMT",
+						datetime_format: "%e.%m.%Y %k:%M",
+						item_description_style: "text+tn",
+						item_thumbnail: "full",
+						item_thumbnail_selection: "enclosure",
+						article_num: "15",
+						rssmikle_item_podcast: "off",
+						keyword_inc: "",
+						keyword_exc: ""
+					};feedwind_show_widget_iframe(params);})();
+					</script>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /g -->
+	
+	<!-- ========== VIDEO ========== -->
+	<!--El video los hemos obtenido de youtube, si hacemos clic derecho sobre el video que estamos viendo 
+	y seleccionamos 'Copiar código de inserción obtenemos un iframe con la resolucion del video y el enlace de dicho video.-->
+
+	<div id="g">
+		<div class="container">
+			<div id="videoWrapper" class="row">
+				<iframe src="https://www.youtube.com/embed/MvPlXFyxSkE" >
+				<!-- 'width' indica el ancho, 'height' indica el alto y 'src' indica el enlace al video-->
+				</iframe>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /dg -->
+	
+	<!-- ========== FILTROS ========== -->
+	<section id="portfolio" name="portfolio"></section>
+	<div id="dg">
+		<div class="container">
+			<div class="row" >
+				<h1>FILTROS</h1>
+				<br>
+				<br>
+			</div>
+			
+			<!-- Aqui es donde el usuario aplica los filtros para buscar el restaurante. Mediante una etiqueta select se despliega una lista 
+			con las ciudades donde el usuario puede buscar y mediante un ng-model guardamos la opcion tomada-->
+			<div class="row" >
+				<div class="col-md-2">
+				<h2>CIUDAD</h2>
+				<select ng-model="lugar.ciudad">
+                    <option value="" >--Selecciona una ciudad--</option>
+  					<option value="Cadiz">Cádiz</option>
+  					<option value="Jerez">Jerez de la Frontera</option>
+					<option value="El Puerto de Santa Maria">El Puerto de Santa María</option>
+					<option value="Puerto Real">Puerto Real</option>
+					<option value="San Fernando">San Fernando</option>
+				</select>
+				</div>
+                <div class="col-md-3"></div>
+                
+                <!-- Aqui se aplica el filtro de valoracion, el cual mediante un ng-click se llama a la funcion resEstrella() o sumEstrella()
+                dependiendo del boton que pulse el usuario-->
+                <div class="col-md-2" >
+                	<h2>VALORACION</h2>
+                	<div style="border: 1px solid grey; background-color: white"><a href="" ng-click="resEstrella();"><img src="assets/img/minus.png"/></a><img ng-src="{{estrellaIMG}}"></img><a href="" ng-click="sumEstrella();"><img src="assets/img/plus.png"/></a></div>
+                </div>
+                <div class="col-md-3"></div>
+                <!-- Aqui se aplica el filtro de precio, el cual mediante un ng-click se llama a la funcion resPrecio() o sumPrecio()
+                dependiendo del boton que pulse el usuario-->
+                <div class="col-md-2" >
+                	<h2>PRECIO</h2>
+                	<div style="border: 1px solid grey; background-color: white"><a href="" ng-click="resPrecio();"><img src="assets/img/minus.png"/></a><img ng-src="{{precioIMG}}"></img><a href="" ng-click="sumPrecio();"><img src="assets/img/plus.png"/></a></div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <!-- Una vez seleccionados los filtros se aplicaran aquí, con el ng-switch compraramos el nombre de la ciudad que a seleccionado 
+            el usuario. A contunuacion, una vez que sabemos la ciudad usamos un ng-repeat para aplicar 3 filtros: Que el nombre de la ciudad 
+            sea igual que el del caso del ng-switch, el precio se comprueba llamando a la funcion filtroEstrellas() para comprobar si el 
+            numero de estrellas marcadas por el usuario es menos o igual al del restaurante y por ultimo con la funcion filtroPrecio() para 
+            comprobar si el precio es meno o igual que el indicado por el usuario. Por ultimo, vamos guardando los resultado en results para
+            indicar despues el numero de restaurantes que han pasado el filtro -->
+            <div class="container"><h3><strong>{{resultadosT}} resultados obtenidos</strong></h3></div>
+            <div class="row">
+				<div ng-switch="lugar.ciudad">
+                    <div ng-switch-when="">
+                        {{Resultado(0)}}
+                    </div>
+  					<div ng-switch-when="Cadiz">
+     					<ul class="list-group">
+  							<li class="list-group-item" ng-repeat="x in Restaurantes | filter: lugar:strict | filter:{ valoracion:estrellas}:filtroEstrellas | filter:{ precio:precioG}:filtroPrecio | filter:x as results" >
+    							<a href="#mapa" class="smoothScroll"><div class="container" ng-click="mapa(x.lat, x.lg, x.ciudad+' - '+x.nombre)" id="restaurante">
+                            		
+									<h3 id="ciudad">{{x.ciudad}}</h3>
+									<p id="clicMapa">CLIC PARA VER MAPA</p>
+    					    		<p id="nombre">{{x.nombre}} </p>
+    					    		<p id="descripcion">{{x.descripcion}}</p>
+    					    		
+    					    		<br>
+    					    		<br>
+    					    		 <div class="row">
+    					    			<div class="col-md-5"></div>
+    					    		 	<div class="col-md-2"><p>Valoracion: {{x.valoracion}} </p></div>
+    					    			<div class="col-md-3"></div>
+    					    			<div class="col-md-2"><p>Precio: {{x.precio}}</p></div>
+    					    		</div>
+    							</div></a>
+  							</li>
+						</ul>
+                    {{Resultado(results.length)}}
+     				</div>
+     				<div ng-switch-when="Jerez">
+     					<ul class="list-group">
+  							<li class="list-group-item" ng-repeat="x in Restaurantes | filter: lugar:strict | filter:{ valoracion:estrellas}:filtroEstrellas | filter:{ precio:precioG}:filtroPrecio | filter:x as results" >
+    							<a href="#mapa" class="smoothScroll"><div class="container" ng-click="mapa(x.lat, x.lg, x.ciudad+' - '+x.nombre)" id="restaurante">
+                            		
+                            		<h3 id="ciudad">{{x.ciudad}}</h3>
+									<p id="clicMapa">CLIC PARA VER MAPA</p>
+    					    		<p id="nombre">{{x.nombre}} </p>
+    					    		<p id="descripcion">{{x.descripcion}}</p>
+    					    		<br>
+    					    		<br>
+    					    		 <div class="row">
+    					    			<div class="col-md-5"></div>
+    					    		 	<div class="col-md-2"><p id="valor">Valoracion: {{x.valoracion}} </p></div>
+    					    			<div class="col-md-3"></div>
+    					    			<div class="col-md-2"><p id="precio">Precio: {{x.precio}}</p></div>
+    					    		</div>
+    							</div></a>
+  							</li>
+						</ul>
+                    {{Resultado(results.length)}}
+     				</div>
+     				<div ng-switch-when="El Puerto de Santa Maria">
+     					<ul class="list-group">
+  							<li class="list-group-item" ng-repeat="x in Restaurantes | filter: lugar:strict | filter:{ valoracion:estrellas}:filtroEstrellas | filter:{ precio:precioG}:filtroPrecio | filter:x as results">
+    							<a href="#mapa" class="smoothScroll"><div class="container" ng-click="mapa(x.lat, x.lg, x.ciudad+' - '+x.nombre)" id="restaurante">
+                            		<h3 id="ciudad">{{x.ciudad}}</h3>
+									<p id="clicMapa">CLIC PARA VER MAPA</p>
+    					    		<p id="nombre">{{x.nombre}} </p>
+    					    		<p id="descripcion">{{x.descripcion}}</p>
+    					    		<br>
+    					    		<br>
+    					    		 <div class="row">
+    					    			<div class="col-md-5"></div>
+    					    		 	<div class="col-md-2"><p id="valor">Valoracion: {{x.valoracion}} </p></div>
+    					    			<div class="col-md-3"></div>
+    					    			<div class="col-md-2"><p id="precio">Precio: {{x.precio}}</p></div>
+    					    		</div>
+    							</div></a>
+  							</li>
+						</ul>
+                    {{Resultado(results.length)}}
+     				</div>
+     				<div ng-switch-when="Puerto Real">
+     					<ul class="list-group">
+  							<li class="list-group-item" ng-repeat="x in Restaurantes | filter: lugar:strict | filter:{ valoracion:estrellas}:filtroEstrellas | filter:{ precio:precioG}:filtroPrecio | filter:x as results">
+    							<a href="#mapa" class="smoothScroll"><div class="container" ng-click="mapa(x.lat, x.lg, x.ciudad+' - '+x.nombre)" id="restaurante">
+                            		<h3 id="ciudad">{{x.ciudad}}</h3>
+									<p id="clicMapa">CLIC PARA VER MAPA</p>
+    					    		<p id="nombre">{{x.nombre}} </p>
+    					    		<p id="descripcion">{{x.descripcion}}</p>
+    					    		<br>
+    					    		<br>
+    					    		 <div class="row">
+    					    			<div class="col-md-5"></div>
+    					    		 	<div class="col-md-2"><p id="valor">Valoracion: {{x.valoracion}} </p></div>
+    					    			<div class="col-md-3"></div>
+    					    			<div class="col-md-2"><p id="precio">Precio: {{x.precio}}</p></div>
+    					    		</div>
+    							</div></a>
+  							</li>
+						</ul>
+                    {{Resultado(results.length)}}
+     				</div>
+     				<div ng-switch-when="San Fernando">
+     					<ul class="list-group">
+  							<li class="list-group-item" ng-repeat="x in Restaurantes | filter: lugar:strict | filter:{ valoracion:estrellas}:filtroEstrellas | filter:{ precio:precioG}:filtroPrecio | filter:x as results">
+    							<a href="#mapa" class="smoothScroll"><div class="container" ng-click="mapa(x.lat, x.lg, x.ciudad+' - '+x.nombre)" id="restaurante">
+                            		<h3 id="ciudad">{{x.ciudad}}</h3>
+									<p id="clicMapa">CLIC PARA VER MAPA</p>
+    					    		<p id="nombre">{{x.nombre}} </p>
+    					    		<p id="descripcion">{{x.descripcion}}</p>
+    					    		<br>
+    					    		<br>
+    					    		 <div class="row">
+    					    			<div class="col-md-5"></div>
+    					    		 	<div class="col-md-2"><p id="valor">Valoracion: {{x.valoracion}} </p></div>
+    					    			<div class="col-md-3"></div>
+    					    			<div class="col-md-2"><p id="precio">Precio: {{x.precio}}</p></div>
+    					    		</div>
+    							</div></a>
+  							</li>
+						</ul>
+                    {{Resultado(results.length)}}
+     				</div>
+  					<div ng-switch-default>
+  					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /dg -->
+
+	<!-- =========== MAPA ============= -->
+	<!--Para el mapa hemos usado una app llamada ng-Map cuya API podemos encontrar aquí https://ngmap.github.io/ -->
+	<section id="mapa" name="mapa"></section>
+	<div id="dg">
+	<div class="container"><h2><strong>{{nombreMapa}} </strong></h2></div>
+	<div class="row">
+        <ng-map id="custom" zoom="16" center="[{{latitud}}, {{longitud}}]"><!-- 'center' sirve para que el mapa se centre en una posición indicandole las coordenadas.
+																				'zoom' indica la cantidad de zoom que se le aplica al mapa-->
+			<!--'marker' no crea un marcador rojo en el mapa para señalar una posición que se le indica con position al que se le asignan unas coordenadas devueltas por la funcion 'mapa' -->
+        	<marker position="[{{latitud}}, {{longitud}}]" />
+
+		</ng-map>
+    </div>
+	</div>
+
+	<!-- ========== REALIZADORES ========== -->
+	<section id="about" name="about"></section>
+	<div id="g">
+		<div class="container">
+			<div class="row">
+				<h1>REALIZADORES</h1>
+				<br>
+				<br>
+				<div class="col-lg-2"></div>
+				<div class="col-lg-8">
+				<p>Somos un grupo de estudiantes de la Universidad de Cádiz y esta web es una aplicación de nuestras capacidades en diferentes aspectos de la implementación e implantación de sistemas software.</p>
+				<br>
+				<br>
+				</div>
+				<div class="col-lg-2"></div>
+				<div class="col-lg-4 team">
+					<img class="img-circle" src="assets/img/team01.jpg" height="90" width="90">
+					<h4>Jesús Iñiguez</h4>
+					<h5><i>Diseñador Web</i></h5>
+					<p>Su trabajo ha consistido en el diseño CSS, estructura y búsqueda de hosting de la web principal.</p>
+					<p>
+						<a href="https://www.facebook.com/jesus.iniguez.731"><i class="icon-facebook"></i></a>
+						<a href="https://twitter.com/sozu00"><i class="icon-twitter"></i></a>
+						<a href="mailto:jesus.iniguezgarcia@alum.uca.es"><i class="icon-envelope"></i></a>
+
+					</p>
+				</div>
+
+				<div class="col-lg-4 team">
+					<img class="img-circle" src="assets/img/team02.jpg" height="90" width="90">
+					<h4>Jose Manuel Martínez</h4>
+					<h5><i>Ingeniero Software</i></h5>
+					<p>Su trabajo en la web se ha basado en la creación de los filtros para la elección del restaurante más óptimo y la documentación del proyecto.</p>
+					<p>
+						<a href="https://www.facebook.com/jay.villiersfarron"><i class="icon-facebook"></i></a>
+						<a href="https://twitter.com/Yoursmile02"><i class="icon-twitter"></i></a>
+						<a href="mailto:jose.martinezgonzalez@alum.uca.es"><i class="icon-envelope"></i></a>
+
+					</p>
+				</div>
+
+				<div class="col-lg-4 team">
+					<img class="img-circle" src="assets/img/team03.jpg" height="90" width="90">
+					<h4>Pedro Candón</h4>
+					<h5><i>Programador Web</i></h5>
+					<p>Su trabajo se ha centrado en el manejo de la API de la aplicación mapa y un lector RSS de noticias relacionadas con comida "Low Cost".</p>
+					<p>
+						<a href="https://www.facebook.com/pedro.candonvigo"><i class="icon-facebook"></i></a>
+						<a href="https://twitter.com/Pecavigo"><i class="icon-twitter"></i></a>
+						<a href="mailto:pedro.candonvigo@alum.uca.es"><i class="icon-envelope"></i></a>
+
+					</p>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /g -->
+	
+	<!-- ========== SECCION DE CONTACTO ========== -->
+	<section id="contact" name="contact"></section>
+	<div id="f">
+		<div class="container">
+			<div class="row">
+					<h3><b>CONTACTE CON NOSOTROS</b></h3>
+					<br>
+					<div class="col-lg-4">
+						<h3><b>Envíenos un e-mail:</b></h3>
+						<h3>esi@uca.es</h3>
+						<br>
+					</div>
+					
+					<div class="col-lg-4">	
+						<h3><b>Llámenos:</b></h3>
+						<h3>+34 956-XXX-XXX</h3>
+						<br>
+					</div>
+					
+					<div class="col-lg-4">
+						<h3><b>O en nuestras redes sociales:</b></h3>
+						<p>
+							<a href="index.html#"><i class="icon-facebook"></i></a>
+							<a href="index.html#"><i class="icon-twitter"></i></a>
+							<a href="index.html#"><i class="icon-envelope"></i></a>
+						</p>
+						<br>
+					</div>
+				</div>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /f -->
+
+	<!-- ========== SECCION COPYRIGHT ========== -->
+	<div id="c">
+		<div class="container">
+			<p>Creado por estudiantes de la <a href="http://www.uca.es">UCA</a></p>
+		</div>
+	</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/classie.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/app.js"></script>
+	<script src="assets/js/controllers/restaurantes.js"></script>
+	<script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.js"></script>	
+</body>
+</html>
