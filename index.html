@@ -37,8 +37,8 @@
 			<h1 class="logo"><a href="index.html#logo">LowCostFood</a></h1>
 			<i class="icon-remove menu-close"></i>
 			<a href="#logo" class="smoothScroll">Inicio</a>
-			<a href="#noticias" class="smoothScroll">Noticias</a>
 			<a href="#filtros" class="smoothScroll">Filtro</a>
+			<a href="#noticias" class="smoothScroll">Noticias</a>
 			<a href="#realizadores" class="smoothScroll">Realizadores</a>
 			<a href="#contact_section" class="smoothScroll">Contacto</a>
 
@@ -63,77 +63,6 @@
 			
 		</div><!-- /container -->
 	</div><!-- /headerwrap -->
-	
-	<!-- ========== NOTICIAS ========== -->
-	<section id="noticias" name="noticias"></section>
-	<div id="dg">
-		<div class="container">
-				<h1>NOTICIAS</h1>
-				<br>
-				<br>
-				<!-- Hemos incorporado un lector RSS gratuito "http://feed.mikle.com/", el cual, insertando el código RSS feed que nos proporciona la página http://gastronomiaycia.com/tag/comida-rapida/feed/ nos da un script para que podamos agregarlo a nuestro HTML -->
-				<script type="text/javascript">document.write('\x3Cscript type="text/javascript" src="' + ('https:' == document.location.protocol ? 'https://' : 'http://') + 'feed.mikle.com/js/rssmikle.js">\x3C/script>');</script>
-				<script type="text/javascript">
-				(function() {
-					var params = {
-						rssmikle_url: "http://gastronomiaycia.com/tag/comida-rapida/feed/",
-						rssmikle_frame_width: "100%",
-						rssmikle_frame_height: "400",
-						frame_height_by_article: "0",
-						rssmikle_target: "_top",
-						rssmikle_font: "Lato, Verdana, Arial, sans-serif", 
-						rssmikle_font_size: "16",
-						rssmikle_border: "on",
-						responsive: "off",
-						rssmikle_css_url: "",
-						text_align: "left",
-						text_align2: "left",
-						corner: "off",
-						scrollbar: "on",
-						autoscroll: "on_mc",
-						scrolldirection: "up",
-						scrollstep: "3",
-						mcspeed: "30",
-						sort: "New",
-						rssmikle_title: "off",
-						rssmikle_title_sentence: "",
-						rssmikle_title_link: "",
-						rssmikle_title_bgcolor: "#0066FF",
-						rssmikle_title_color: "#FFFFFF",
-						rssmikle_title_bgimage: "",
-						rssmikle_item_bgcolor: "#00FF",
-						rssmikle_item_bgimage: "",
-						rssmikle_item_title_length: "200",
-						rssmikle_item_title_color: "#000000",
-						rssmikle_item_border_bottom: "off",
-						rssmikle_item_description: "on",
-						item_link: "off",
-						rssmikle_item_description_length: "600",
-						rssmikle_item_description_color: "#555",
-						rssmikle_item_date: "gl1",
-						rssmikle_timezone: "Etc/GMT",
-						datetime_format: "%e.%m.%Y %k:%M",
-						item_description_style: "text+tn",
-						item_thumbnail: "full",
-						item_thumbnail_selection: "enclosure",
-						article_num: "15",
-						rssmikle_item_podcast: "off",
-						keyword_inc: "",
-						keyword_exc: ""
-					};feedwind_show_widget_iframe(params);})();
-					</script>
-		</div><!-- /container -->
-	</div><!-- /g -->
-	
-	<!-- ========== VIDEO ========== -->
-	<div id="g">
-		<div class="container">
-			<div id="videoWrapper" class="row">
-				<iframe src="https://www.youtube.com/embed/MvPlXFyxSkE" >
-				</iframe>
-			</div>
-		</div><!-- /container -->
-	</div><!-- /dg -->
 	
 	<!-- ========== FILTROS ========== -->
 	<section id="filtros" name="filtros"></section>
@@ -307,19 +236,91 @@
 	<!-- Para el mapa hemos usado una app de angularjs en google Maps llamada ng-Map cuya API podemos encontrar aquí https://ngmap.github.io/ -->
 	<section id="mapa" name="mapa"></section>
 	<div id="dg">
-	<div class="container"><h2><strong>{{nombreMapa}} </strong></h2></div>
-	<div class="row">
+		<div class="container"><h2><strong>{{nombreMapa}} </strong></h2></div>
+		<div class="row">
 			<!-- 'center' sirve para que el mapa se centre en una posición indicandole las coordenadas -->
-        <ng-map id="custom" zoom="16" center="[{{latitud}}, {{longitud}}]">
-			<!--'marker' crea un marcador rojo en el mapa para señalar una posición dada por unas coordenadas. -->
-        	<marker position="[{{latitud}}, {{longitud}}]" />
-
-		</ng-map>
-    </div>
+        	<ng-map id="custom" zoom="16" center="[{{latitud}}, {{longitud}}]">
+				<!--'marker' crea un marcador rojo en el mapa para señalar una posición dada por unas coordenadas. -->
+        		<marker position="[{{latitud}}, {{longitud}}]" />
+			</ng-map>
+    	</div>
 	</div>
 
+
+	<!-- ========== NOTICIAS ========== -->
+	<section id="noticias">
+	<div id="dg">
+		<div class="container">
+				<h1>NOTICIAS</h1>
+				<br>
+				<br>
+				<!-- Hemos incorporado un lector RSS gratuito "http://feed.mikle.com/", el cual, insertando el código RSS feed que nos proporciona la página http://gastronomiaycia.com/tag/comida-rapida/feed/ nos da un script para que podamos agregarlo a nuestro HTML -->
+				<script type="text/javascript">document.write('\x3Cscript type="text/javascript" src="' + ('https:' == document.location.protocol ? 'https://' : 'http://') + 'feed.mikle.com/js/rssmikle.js">\x3C/script>');</script>
+				<script type="text/javascript">
+				(function() {
+					var params = {
+						rssmikle_url: "http://gastronomiaycia.com/tag/comida-rapida/feed/",
+						rssmikle_frame_width: "100%",
+						rssmikle_frame_height: "400",
+						frame_height_by_article: "0",
+						rssmikle_target: "_top",
+						rssmikle_font: "Lato, Verdana, Arial, sans-serif", 
+						rssmikle_font_size: "16",
+						rssmikle_border: "on",
+						responsive: "off",
+						rssmikle_css_url: "",
+						text_align: "left",
+						text_align2: "left",
+						corner: "off",
+						scrollbar: "on",
+						autoscroll: "on_mc",
+						scrolldirection: "up",
+						scrollstep: "3",
+						mcspeed: "30",
+						sort: "New",
+						rssmikle_title: "off",
+						rssmikle_title_sentence: "",
+						rssmikle_title_link: "",
+						rssmikle_title_bgcolor: "#0066FF",
+						rssmikle_title_color: "#FFFFFF",
+						rssmikle_title_bgimage: "",
+						rssmikle_item_bgcolor: "#00FF",
+						rssmikle_item_bgimage: "",
+						rssmikle_item_title_length: "200",
+						rssmikle_item_title_color: "#000000",
+						rssmikle_item_border_bottom: "off",
+						rssmikle_item_description: "on",
+						item_link: "off",
+						rssmikle_item_description_length: "600",
+						rssmikle_item_description_color: "#555",
+						rssmikle_item_date: "gl1",
+						rssmikle_timezone: "Etc/GMT",
+						datetime_format: "%e.%m.%Y %k:%M",
+						item_description_style: "text+tn",
+						item_thumbnail: "full",
+						item_thumbnail_selection: "enclosure",
+						article_num: "15",
+						rssmikle_item_podcast: "off",
+						keyword_inc: "",
+						keyword_exc: ""
+					};feedwind_show_widget_iframe(params);})();
+					</script>
+		</div><!-- /container -->
+	</div><!-- /g -->
+	</section>
+
+	<!-- ========== VIDEO ========== -->
+	<div id="g">
+		<div class="container">
+			<div id="videoWrapper" class="row">
+				<iframe width="50%" src="https://www.youtube.com/embed/MvPlXFyxSkE" >
+				</iframe>
+			</div>
+		</div><!-- /container -->
+	</div><!-- /dg -->
+
 	<!-- ========== REALIZADORES ========== -->
-	<section id="realizadores" name="realizadores">
+	<section id="realizadores">
 	<div id="g">
 		<div class="container">
 			<div class="row">
@@ -377,7 +378,7 @@
 	</section> <!-- /realizadores-->
 	
 	<!-- ========== SECCION DE CONTACTO ========== -->
-	<section id="contact_section" name="contact_section">
+	<section id="contact_section">
 	<div id="contacto">
 		<div class="container">
 			<div class="row">
