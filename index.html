@@ -237,14 +237,14 @@
 	<!-- Para el mapa hemos usado una app de angularjs en google Maps llamada ng-Map cuya API podemos encontrar aquí https://ngmap.github.io/ -->
 	<section id="mapa">
 	<div id="dg">
-		<div class="container"><h2><strong>{{nombreMapa}} </strong></h2></div>
-		<div class="row">
-			<!-- 'center' sirve para que el mapa se centre en una posición indicandole las coordenadas -->
-        	<ng-map id="custom" zoom="16" center="[{{latitud}}, {{longitud}}]">
-				<!--'marker' crea un marcador rojo en el mapa para señalar una posición dada por unas coordenadas. -->
-        		<marker position="[{{latitud}}, {{longitud}}]" />
-			</ng-map>
-    	</div>
+		
+		<div class="container"><h2><strong>{{nombreMapa}}</strong></h2></div>
+		
+		<!-- 'center' sirve para que el mapa se centre en una posición indicandole las coordenadas -->
+        <ng-map id="custom" zoom="16" center="[{{latitud}}, {{longitud}}]">
+			<!--'marker' crea un marcador rojo en el mapa para señalar una posición dada por unas coordenadas. -->
+        	<marker position="[{{latitud}}, {{longitud}}]" />
+		</ng-map>
 	</div>
 	</section>
 
@@ -335,6 +335,8 @@
 				<br>
 				</div>
 				<div class="col-md-2"></div>
+			</div>
+			<div class="row">
 				<div class="col-md-4 team">
 					<img class="img-circle" src="assets/img/team01.jpg" height="90" width="90">
 					<h4>Jesús Iñiguez</h4>
