@@ -19,18 +19,6 @@ angular
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html', controller: 'RestaurantesApp'
-      })
-      .when('/noticias', {
-        templateUrl: 'views/noticias.html'
-      })
-      .when('/formulario', {
-        templateUrl: 'views/formulario.html',
-        controller: 'formControlador'
-      })
-      .when('/tienda',{
-        templateUrl: 'views/tienda.html',
-        controller: 'PublicidadPadel'
-      })
       .otherwise({
         redirectTo: '/'
       });
