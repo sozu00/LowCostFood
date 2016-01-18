@@ -4,10 +4,10 @@ var miapp = angular.module('iissApp', ['ngMap']);
 miapp.controller('RestaurantesApp',['$scope',function($scope){
      
     $scope.resultadosT = 0; //Almacena el numeros de restaurantes encontrados despues de aplicar los filtros
-    $scope.estrellas = 5;   //Almacena el numero total de puntos de valoracion que a indicado el usuario en el filtro
-    $scope.precioG = 5;     //Almacena el numero total de puntos en el precio que a indicado el usuario en el filtro
-    $scope.estrellaIMG = "assets/img/5stars.png"; //Imagen por defecto del filtro Valoración
-    $scope.precioIMG="assets/img/5euro.png"; // Imagen por defecto del filtro Precio
+    $scope.estrellas = 1;   //Almacena el numero total de puntos de valoracion que a indicado el usuario en el filtro
+    $scope.precioG = 1;     //Almacena el numero total de puntos en el precio que a indicado el usuario en el filtro
+    $scope.estrellaIMG = "assets/img/1stars.png"; //Imagen por defecto del filtro Valoración
+    $scope.precioIMG="assets/img/1stars.png"; // Imagen por defecto del filtro Precio
 	$scope.latitud = 36.537999;         //Almacena el latitud de las coordenadas que se introducen en el mapa para localizar el restaurante
     $scope.longitud = -6.202169;        //Almacena el longitud de las coordenadas que se introducen en el mapa para localizar el restaurante
     $scope.nombreMapa = ""; //Almacena el nombre del restaurante y la ciudad en la que se encuentra para mostrarla arriba del mapa
@@ -55,10 +55,10 @@ miapp.controller('RestaurantesApp',['$scope',function($scope){
     /*Aumenta en 1 los puntos de Precio y modifica la imagen del filtrado*/
     $scope.sumPrecio = function(){
         switch($scope.precioG){
-            case 1: $scope.precioIMG= "assets/img/2euro.png";break;
-            case 2: $scope.precioIMG= "assets/img/3euro.png";break;
-            case 3: $scope.precioIMG= "assets/img/4euro.png";break;
-            case 4: $scope.precioIMG= "assets/img/5euro.png";break;
+            case 1: $scope.precioIMG= "assets/img/2stars.png";break;
+            case 2: $scope.precioIMG= "assets/img/3stars.png";break;
+            case 3: $scope.precioIMG= "assets/img/4stars.png";break;
+            case 4: $scope.precioIMG= "assets/img/5stars.png";break;
         };
         if($scope.precioG !== 5)
             $scope.precioG += 1;
@@ -67,10 +67,10 @@ miapp.controller('RestaurantesApp',['$scope',function($scope){
     /*Disminuye en 1 los puntos de Valoracion y modifica la imagen del filtrado*/
     $scope.resPrecio = function(){
         switch($scope.precioG){
-            case 2: $scope.precioIMG= "assets/img/1euro.png";break;
-            case 3: $scope.precioIMG= "assets/img/2euro.png";break;
-            case 4: $scope.precioIMG= "assets/img/3euro.png";break;
-            case 5: $scope.precioIMG= "assets/img/4euro.png";break;
+            case 2: $scope.precioIMG= "assets/img/1stars.png";break;
+            case 3: $scope.precioIMG= "assets/img/2stars.png";break;
+            case 4: $scope.precioIMG= "assets/img/3stars.png";break;
+            case 5: $scope.precioIMG= "assets/img/4stars.png";break;
         };
         if($scope.precioG !== 1)
             $scope.precioG -= 1;
@@ -90,7 +90,7 @@ miapp.controller('RestaurantesApp',['$scope',function($scope){
       mayor o igual al de la ciudad que se esta comprobando*/
     $scope.filtroPrecio = function(valor,expected){
         
-        if($scope.precioG >= valor)
+        if($scope.precioG <= valor)
             return true;
         else
             return false;

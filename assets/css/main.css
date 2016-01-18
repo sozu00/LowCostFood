@@ -186,15 +186,14 @@ a:after {
 /* Video Wrap */
 #videoWrapper {
 	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
+	padding-bottom: 36.25%; /* 16:9 */
 	padding-top: 25px;
 	height: 0;
 }
 #videoWrapper iframe {
+	left: 15%;
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+	width: 70%;
 	height: 100%;
 }
 
