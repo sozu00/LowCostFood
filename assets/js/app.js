@@ -18,7 +18,7 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html', controller: 'RestaurantesApp'
+        templateUrl: 'index.html', controller: 'RestaurantesApp'
       .otherwise({
         redirectTo: '/'
       });
