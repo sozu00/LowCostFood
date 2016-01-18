@@ -74,6 +74,9 @@ a:after {
 .list-group-item:hover p {
 	color:white;
 }
+.list-group-item h3 {
+	margin-right: 3%;
+}
 .list-group-item:hover h3 {
 	color:white;
 }
@@ -393,8 +396,6 @@ a:after {
 	display:none;
 	text-align:center;
 }
-
-
 
 #custom {
 	padding: auto;
