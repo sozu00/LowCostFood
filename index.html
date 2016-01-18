@@ -65,7 +65,7 @@
 	</div><!-- /headerwrap -->
 	
 	<!-- ========== FILTROS ========== -->
-	<section id="filtros" name="filtros"></section>
+	<section id="filtros">
 	<div id="dg">
 		<div class="container">
 			<div class="row" >
@@ -231,10 +231,11 @@
 			</div>
 		</div><!-- /container -->
 	</div><!-- /dg -->
+	</section>
 
 	<!-- =========== MAPA ============= -->
 	<!-- Para el mapa hemos usado una app de angularjs en google Maps llamada ng-Map cuya API podemos encontrar aquí https://ngmap.github.io/ -->
-	<section id="mapa" name="mapa"></section>
+	<section id="mapa">
 	<div id="dg">
 		<div class="container"><h2><strong>{{nombreMapa}} </strong></h2></div>
 		<div class="row">
@@ -245,7 +246,7 @@
 			</ng-map>
     	</div>
 	</div>
-
+	</section>
 
 	<!-- ========== NOTICIAS ========== -->
 	<section id="noticias">
@@ -260,7 +261,7 @@
 				(function() {
 					var params = {
 						rssmikle_url: "http://gastronomiaycia.com/tag/comida-rapida/feed/",
-						rssmikle_frame_width: "100%",
+						rssmikle_frame_width: "70%",
 						rssmikle_frame_height: "400",
 						frame_height_by_article: "0",
 						rssmikle_target: "_top",
