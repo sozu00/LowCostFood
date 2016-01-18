@@ -92,7 +92,7 @@ a:after {
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
-	min-height: 700px;
+	min-height: 400px;
 	width: 100%;
 	
     -webkit-background-size: 100%;
@@ -107,7 +107,7 @@ a:after {
 }
 
 #headerwrap h1 {
-	margin-top: 130px;
+	margin-top: 50px;
 	color: white;
 	font-size: 140px;
 	font-weight: 700;
